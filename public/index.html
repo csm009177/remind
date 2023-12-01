@@ -1,54 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    *{margin: 0; padding: 0; box-sizing: border-box;}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
   </style>
 </head>
+
 <body>
   <div id="root"></div>
   <script type="module">
-    import {createElement, render} from './index.js';
+    import { createElement, render } from './index.js';
     //stateData
     const contState = {
-      bigCont : {
-        style:"width:100vw; height:100vh;"
+      bigCont: {
+        style: "width:100vw; height:100vh; background: #4A4A4A;"
       },
-      middleCont : {
-        style:"width:100vw; height:50vh; display:flex; justify-content:center; align-items: center;"
+      middleCont: {
+        style: "width:100vw; height:50vh; display:flex; justify-content:center; align-items: center;"
       },
-      box : {
-        
+      box: {
+        style: "width:98vw; height:48vh; background: #D9D9D9;"
       }
     }
 
+
     //comp big cont 
-    const bigcont = 
+    const bigcont =
       // root 
-      createElement("div", {id:"bigCont",
-        style:contState.bigCont.style}, 
+      createElement("div", { id: "bigCont",
+        style: contState.bigCont.style
+      },
         // cont1
-        createElement("div", { id:"cont1",
-          style:contState.middleCont.style},
+        createElement("div", { id: "cont1",
+          style: contState.middleCont.style
+        },
           //box1
-          createElement("div", { id:"box1",
-            style : "width:90vw; height:45vh"
+          createElement("div", { id: "box1",
+            style: contState.box.style + "margin-top: 1vh;"
           }, "test"
           ),
         ),
         // cont2
-        createElement("div", { id:"cont2",
-          style:contState.middleCont.style},
-          "test"
+        createElement("div", { id: "cont2",
+          style: contState.middleCont.style
+        },
+          //box2
+          createElement("div", { id: "box2",
+            style: contState.box.style  + "margin-bottom: 1vh;"
+          }, "test"
+          )
         )
-
-        );
+      )
     // append 
     const root = document.getElementById('root');
     root.appendChild(render(bigcont));
   </script>
 </body>
+
 </html>
