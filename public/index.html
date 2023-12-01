@@ -10,6 +10,7 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      list-style:none;
     }
   </style>
 </head>
@@ -37,9 +38,12 @@
         style: "width:68vw; height:48vh; background: #E7E7E7;background: #D9D9D9;"
       },
       liTag : {
-        style: "color: #000; font-family: Inter; font-style: normal;",
+        style: "color: #000; font-family: Inter; font-style: normal; font-family: Inter; font-style: normal; line-height: normal;",
         str : "Lorem ipsum dolor sit amet consectetur. Odio quisque et ac egestas aliquet lectus sagittis tortor pellentesque. Fames urna porttitor egestas ornare non pharetra vulputate imperdiet. Massa vulputate ultrices mauris ut amet sit et netus. Non enim aliquam placerat mattis id in mattis. Elementum mauris vestibulum ullamcorper orci penatibus laoreet risus diam. Etiam neque ut est posuere leo tincidunt ridiculus vitae sagittis. Egestas sed lectus tempus purus egestas. Elit maecenas turpis justo feugiat sagittis enim cras lobortis. Imperdiet turpis pellentesque posuere suspendisse. Et risus scelerisque id nulla. Nulla faucibus ut ultricies velit sed maecenas. A mattis neque erat egestas porttitor risus sed. Adipiscing nibh et dolor proin lorem tortor malesuada massa. Velit libero ac proin in orci nibh. Viverra ullamcorper massa nisi urna dignissim netus sed. Non sed ornare semper eu faucibus et odio fames tincidunt. Aenean neque aenean tortor interdum dignissim. Aliquet ornare nulla porttitor libero pretium morbi sagittis scelerisque. Elit arcu diam urna consectetur. Cursus augue volutpat habitasse sed neque vitae id. A amet arcu dignissim ut non gravida ut. Laoreet rhoncus leo odio donec.Auctor vitae porttitor suspendisse lobortis eleifend tristique diam. Malesuada arcu rutrum condimentum commodo vitae donec. Pretium malesuada blandit integer nunc feugiat ligula. Duis at in id urna. Massa in neque montes parturient urna. Id ligula quam ipsum nulla. Velit purus suspendisse arcu scelerisque tellus risus. Sed id lacus sit turpis mi adipiscing. Enim eget nec arcu massa adipiscing elit rhoncus. Quis congue senectus porttitor dui nisl. Ac luctus quam quam lorem. Nunc aliquam ornare dictum nullam vitae dui. Dictum commodo habitant augue gravida consequat quis proin mauris nec. Amet senectus ac sagittis volutpat quisque nec amet. Mi placerat lectus purus neque sit cursus proin. Natoque quam justo sem neque massa integer."
-      }
+      },
+      h1Tag : {
+        style : "color: #8D8D8D; fontFamily:Inter; fontStyle: italic ; lineHeight:normal;"   
+      },
     }
 
 
@@ -63,16 +67,16 @@
             createElement("div", { class: "cont1-right",
               style: contState.rightcont.style },
               // heading
-              createElement("div", { 
+              createElement("h1", { 
                 style : contState.liTag.style }, 
                 "HTML Training 3"  ),  
               // content
-              createElement("div", {
+              createElement("li", {
                 style : contState.liTag.style }, 
                 contState.liTag.str), 
               // sign?
-              createElement("div", {
-                style : contState.liTag.style }, 
+              createElement("h1", {
+                style : contState.h1Tag.style }, 
                 "Lorem ipsum dolor sit amet consectetur."),
             ),
           ),
