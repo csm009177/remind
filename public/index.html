@@ -9,27 +9,46 @@
   </style>
 </head>
 <body>
+  <div id="root"></div>
   <script type="module">
     import {createElement, render} from './index.js';
     //stateData
+    const contState = {
+      bigCont : {
+        style:"width:100vw; height:100vh;"
+      },
+      middleCont : {
+        style:"width:100vw; height:50vh; display:flex; justify-content:center; align-items: center;"
+      },
+      box : {
+        
+      }
+    }
 
     //comp big cont 
     const bigcont = 
       // root 
-      createElement("div", {id:"root",
-        style:"width:100vw; height:100vh"}, 
+      createElement("div", {id:"bigCont",
+        style:contState.bigCont.style}, 
         // cont1
         createElement("div", { id:"cont1",
-          
-        }),
+          style:contState.middleCont.style},
+          //box1
+          createElement("div", { id:"box1",
+            style : "width:90vw; height:45vh"
+          }, "test"
+          ),
+        ),
         // cont2
         createElement("div", { id:"cont2",
-
-        })  
+          style:contState.middleCont.style},
+          "test"
         )
+
+        );
     // append 
-    const body = document.body;
-    body.appendChild(render(bigcont));
+    const root = document.getElementById('root');
+    root.appendChild(render(bigcont));
   </script>
 </body>
 </html>
