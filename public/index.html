@@ -4,18 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+  </style>
 </head>
 <body>
-  <div id="root">
-  </div>
   <script type="module">
     import {createElement, render} from './index.js';
     //comp big cont 
     const bigcont = 
-      createElement("div", {style:"width:100vh; height"}, "test")
+      // root 
+      createElement("div", {id:"root",
+        style:"width:100vw; height:100vh"}, 
+        // cont1
+        createElement("div", { id:"cont1",
+          
+        }),
+        // cont 
+        createElement("div", { id:"cont2"
+
+        })  
+        )
     // append 
-    const root = document.getElementById('root');
-    root.appendChild(render(bigcont));
+    const body = document.body;
+    body.appendChild(render(bigcont));
   </script>
 </body>
 </html>

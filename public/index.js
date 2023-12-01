@@ -1,7 +1,10 @@
+// 기본형태 컴포넌트
 export function createElement(type, props, ...children) {
   return { type, props, children};
 }
 
+//--------------------------------------------------------------------
+// 랜더링 하는것
 export function render(virtualDom) {
   if(typeof virtualDom === 'string') {
     return document.createTextNode(virtualDom);
