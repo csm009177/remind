@@ -26,8 +26,19 @@
       middleCont: {
         style: "width:100vw; height:50vh; display:flex; justify-content:center; align-items: center;"
       },
-      box: {
-        style: "width:98vw; height:48vh; background: #D9D9D9;"
+      cont: {
+        style: "width:98vw; height:48vh; background: #D9D9D9; display:flex; justify-content:center; align-items: center;"
+      },
+      leftcont: {
+        style: "width:30vw; height:48vh; background: #E7E7E7; display:flex; justify-content:center; align-items: center;",
+        str : "Lorem ipsum dolor sit amet consectetur. Odio quisque et ac egestas aliquet lectus sagittis tortor pellentesque. Fames urna porttitor egestas ornare non pharetra vulputate imperdiet. Massa vulputate ultrices mauris ut amet sit et netus. Non enim aliquam placerat mattis id in mattis. Elementum mauris vestibulum ullamcorper orci penatibus laoreet risus diam. Etiam neque ut est posuere leo tincidunt ridiculus vitae sagittis. Egestas sed lectus tempus purus egestas. Elit maecenas turpis justo feugiat sagittis enim cras lobortis. Imperdiet turpis pellentesque posuere suspendisse. Et risus scelerisque id nulla. Nulla faucibus ut ultricies velit sed maecenas. A mattis neque erat egestas porttitor risus sed. Adipiscing nibh et dolor proin lorem tortor malesuada massa. Velit libero ac proin in orci nibh. Viverra ullamcorper massa nisi urna dignissim netus sed. Non sed ornare semper eu faucibus et odio fames tincidunt. Aenean neque aenean tortor interdum "
+      },
+      rightcont: {
+        style: "width:68vw; height:48vh; background: #E7E7E7;background: #D9D9D9;"
+      },
+      liTag : {
+        style: "color: #000; font-family: Inter; font-style: normal;",
+        str : "Lorem ipsum dolor sit amet consectetur. Odio quisque et ac egestas aliquet lectus sagittis tortor pellentesque. Fames urna porttitor egestas ornare non pharetra vulputate imperdiet. Massa vulputate ultrices mauris ut amet sit et netus. Non enim aliquam placerat mattis id in mattis. Elementum mauris vestibulum ullamcorper orci penatibus laoreet risus diam. Etiam neque ut est posuere leo tincidunt ridiculus vitae sagittis. Egestas sed lectus tempus purus egestas. Elit maecenas turpis justo feugiat sagittis enim cras lobortis. Imperdiet turpis pellentesque posuere suspendisse. Et risus scelerisque id nulla. Nulla faucibus ut ultricies velit sed maecenas. A mattis neque erat egestas porttitor risus sed. Adipiscing nibh et dolor proin lorem tortor malesuada massa. Velit libero ac proin in orci nibh. Viverra ullamcorper massa nisi urna dignissim netus sed. Non sed ornare semper eu faucibus et odio fames tincidunt. Aenean neque aenean tortor interdum dignissim. Aliquet ornare nulla porttitor libero pretium morbi sagittis scelerisque. Elit arcu diam urna consectetur. Cursus augue volutpat habitasse sed neque vitae id. A amet arcu dignissim ut non gravida ut. Laoreet rhoncus leo odio donec.Auctor vitae porttitor suspendisse lobortis eleifend tristique diam. Malesuada arcu rutrum condimentum commodo vitae donec. Pretium malesuada blandit integer nunc feugiat ligula. Duis at in id urna. Massa in neque montes parturient urna. Id ligula quam ipsum nulla. Velit purus suspendisse arcu scelerisque tellus risus. Sed id lacus sit turpis mi adipiscing. Enim eget nec arcu massa adipiscing elit rhoncus. Quis congue senectus porttitor dui nisl. Ac luctus quam quam lorem. Nunc aliquam ornare dictum nullam vitae dui. Dictum commodo habitant augue gravida consequat quis proin mauris nec. Amet senectus ac sagittis volutpat quisque nec amet. Mi placerat lectus purus neque sit cursus proin. Natoque quam justo sem neque massa integer."
       }
     }
 
@@ -35,27 +46,44 @@
     //comp big cont 
     const bigcont =
       // root 
-      createElement("div", { id: "bigCont",
-        style: contState.bigCont.style
-      },
+      createElement("div", { class: "bigCont",
+        style: contState.bigCont.style },
         // cont1
-        createElement("div", { id: "cont1",
-          style: contState.middleCont.style
-        },
-          //box1
-          createElement("div", { id: "box1",
-            style: contState.box.style + "margin-top: 1vh;"
-          }, "test"
+        createElement("div", {
+          style: contState.middleCont.style },
+          // cont1
+          createElement("div", { class: "cont1",
+            style: contState.cont.style + "margin-top: 1vh;" }, 
+            // cont1-1
+            createElement("div", { class: "cont1-left",
+              style: contState.leftcont.style},
+              contState.leftcont.str
+            ),
+            // cont1-2
+            createElement("div", { class: "cont1-right",
+              style: contState.rightcont.style },
+              // heading
+              createElement("div", { 
+                style : contState.liTag.style }, 
+                "HTML Training 3"  ),  
+              // content
+              createElement("div", {
+                style : contState.liTag.style }, 
+                contState.liTag.str), 
+              // sign?
+              createElement("div", {
+                style : contState.liTag.style }, 
+                "Lorem ipsum dolor sit amet consectetur."),
+            ),
           ),
         ),
         // cont2
-        createElement("div", { id: "cont2",
-          style: contState.middleCont.style
-        },
-          //box2
-          createElement("div", { id: "box2",
-            style: contState.box.style  + "margin-bottom: 1vh;"
-          }, "test"
+        createElement("div", {
+          style: contState.middleCont.style },
+          // cont2
+          createElement("div", { class: "cont2",
+            style: contState.cont.style + "margin-bottom: 1vh;" }, 
+            "test"
           )
         )
       )
