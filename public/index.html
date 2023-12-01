@@ -44,6 +44,9 @@
       h1Tag : {
         style : "color: #8D8D8D; fontFamily:Inter; fontStyle: italic ; lineHeight:normal;"   
       },
+      unvisibleCont : {
+        style : "color: #8D8D8D; fontFamily:Inter; fontStyle: italic ; lineHeight:normal;"   
+      }
     }
 
 
@@ -87,7 +90,15 @@
           // cont2
           createElement("div", { class: "cont2",
             style: contState.cont.style + "margin-bottom: 1vh;" }, 
-            "test"
+            // cont2-1
+            createElement("div", {class:"cont2-1", 
+              style:contState.unvisibleCont.style }, createElement()),
+            // cont2-2
+            createElement("div", {class:"cont2-2", 
+              style:contState.unvisibleCont.style }, createElement()),
+            // cont2-3
+            createElement("div", {class:"cont2-3", 
+              style:contState.unvisibleCont.style }, createElement()),
           )
         )
       )
