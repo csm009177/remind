@@ -24,12 +24,22 @@
     // root declare 
     const root = document.getElementById('root');
     // use xhr 
+    // let contState = {}
     xhr.onreadystatechange = function () {
       // 상태 체크 readystat==4 : 요청완료 응답받음 xhr.status == 200
       if (xhr.readyState == 4 && xhr.status == 200) {
         // JSON parse response text and put in variation
-        let contState = JSON.parse(xhr.responseText);
-            //comp big cont 
+        contState = JSON.parse(xhr.responseText);
+      }
+    };
+    
+    
+    xhr.open("GET", "index.json", true);
+    xhr.send();
+    
+    
+
+    //comp big cont 
     const bigcont =
       // root
       createElement("div", { class: "bigCont",
@@ -102,14 +112,9 @@
           )
         )
       )
-
       // append 
       root.appendChild(render(bigcont));
-      }
-    };
-
-    xhr.open("GET", "index.json", true);
-    xhr.send();
+    
   </script>
 </body>
 
