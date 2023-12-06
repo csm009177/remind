@@ -29,7 +29,7 @@
       if (xhr.readyState == 4 && xhr.status == 200) {
         // JSON parse response text and put in variation
         let contState = JSON.parse(xhr.responseText);
-    //comp big cont 
+            //comp big cont 
     const bigcont =
       // root
       createElement("div", { class: "bigCont",
@@ -103,15 +103,13 @@
         )
       )
 
-
-
-          // // append 
+      // append 
       root.appendChild(render(bigcont));
       }
     };
+
     xhr.open("GET", "index.json", true);
     xhr.send();
-
   </script>
 </body>
 
